@@ -575,3 +575,23 @@ const products = [
     ],
   },
 ];
+const cards = document.querySelector('.cards');
+
+function displayProducts(products) {
+  let str = '';
+  products.forEach((product) => {
+    str += `
+      <div class="card">
+        <img src="${product.images[0]}" />
+        <div class="card-content">
+          <h3>${product.name}</h3>
+          <p>${product.category}</p>
+          <p>${product.description}</p>
+          <h3>${product.price}$</h3>
+        </div>
+      </div>
+    `;
+  });
+  cards.innerHTML = str;
+}
+displayProducts(products);
